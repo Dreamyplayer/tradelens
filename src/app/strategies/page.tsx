@@ -41,6 +41,17 @@ export default function StrategiesPage() {
             accent='text-purple-500'
           />
         </div>
+
+        <p className='text-xs font-mono tracking-widest text-neutral-500 mt-14 mb-4'>FOUNDATIONS</p>
+        <div className='grid gap-4'>
+          <StrategyCard
+            href='/strategies/risk-management'
+            index='FOUNDATION 01'
+            title='Risk Management'
+            description='Position sizing, reward-to-risk ratios, and drawdown math — the layer underneath every strategy above.'
+            accent='text-rose-500'
+          />
+        </div>
       </div>
     </main>
   );
