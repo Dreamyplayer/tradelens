@@ -5,18 +5,20 @@ import { makeKey } from '@/components/utils';
  * strong impulsive move up. Marked as a zone — price often returns to
  * "mitigate" it before continuing.
  */
+
+const candles = [
+  { x: 60, o: 200, c: 210, h: 195, l: 215 },
+  { x: 100, o: 210, c: 220, h: 205, l: 225 },
+  { x: 140, o: 220, c: 235, h: 215, l: 240 }, // last down candle (order block)
+  { x: 180, o: 235, c: 150, h: 145, l: 238 }, // impulsive move up
+  { x: 220, o: 150, c: 90, h: 85, l: 155 },
+  { x: 260, o: 90, c: 60, h: 55, l: 95 },
+  { x: 300, o: 60, c: 100, h: 55, l: 105 }, // pulls back to mitigate OB
+  { x: 340, o: 100, c: 150, h: 95, l: 220 }, // wick returns into OB zone
+  { x: 380, o: 150, c: 70, h: 65, l: 155 }, // continues up
+];
+
 export default function OrderBlockDiagram() {
-  const candles = [
-    { x: 60, o: 200, c: 210, h: 195, l: 215 },
-    { x: 100, o: 210, c: 220, h: 205, l: 225 },
-    { x: 140, o: 220, c: 235, h: 215, l: 240 }, // last down candle (order block)
-    { x: 180, o: 235, c: 150, h: 145, l: 238 }, // impulsive move up
-    { x: 220, o: 150, c: 90, h: 85, l: 155 },
-    { x: 260, o: 90, c: 60, h: 55, l: 95 },
-    { x: 300, o: 60, c: 100, h: 55, l: 105 }, // pulls back to mitigate OB
-    { x: 340, o: 100, c: 150, h: 95, l: 220 }, // wick returns into OB zone
-    { x: 380, o: 150, c: 70, h: 65, l: 155 }, // continues up
-  ];
   return (
     <svg viewBox='0 0 460 280' className='w-full h-auto rounded-lg bg-neutral-900 border border-neutral-800'>
       {/* Order block zone */}

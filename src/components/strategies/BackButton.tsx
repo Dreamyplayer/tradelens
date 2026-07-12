@@ -8,6 +8,7 @@ export default function BackButton() {
   return (
     <button
       onClick={() => router.back()}
+      type='button'
       className='inline-flex items-center gap-2 text-sm text-neutral-500 transition-colors hover:text-emerald-500 cursor-pointer'
     >
       ← Back

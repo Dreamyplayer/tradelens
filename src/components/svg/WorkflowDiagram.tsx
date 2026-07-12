@@ -4,16 +4,18 @@ import { makeKey } from '@/components/utils';
  * Capstone flowchart: the full decision path from reading conditions
  * through to journaling the result.
  */
+
+const steps = [
+  { label: '1. Read market condition', sub: 'trending / ranging / choppy' },
+  { label: '2. Set HTF bias', sub: 'multi-timeframe top-down' },
+  { label: '3. Pick matching strategy', sub: 'price action / trend / breakout / SMC' },
+  { label: '4. Run pre-trade checklist', sub: 'zone, confirmation, size' },
+  { label: '5. Enter with sized position', sub: 'risk management rules' },
+  { label: '6. Manage the open trade', sub: 'breakeven, partials, trail' },
+  { label: '7. Journal the result', sub: 'rule-followed? R multiple?' },
+];
+
 export default function WorkflowDiagram() {
-  const steps = [
-    { label: '1. Read market condition', sub: 'trending / ranging / choppy' },
-    { label: '2. Set HTF bias', sub: 'multi-timeframe top-down' },
-    { label: '3. Pick matching strategy', sub: 'price action / trend / breakout / SMC' },
-    { label: '4. Run pre-trade checklist', sub: 'zone, confirmation, size' },
-    { label: '5. Enter with sized position', sub: 'risk management rules' },
-    { label: '6. Manage the open trade', sub: 'breakeven, partials, trail' },
-    { label: '7. Journal the result', sub: 'rule-followed? R multiple?' },
-  ];
   return (
     <svg viewBox='0 0 400 620' className='w-full h-auto rounded-lg bg-neutral-900 border border-neutral-800'>
       {steps.map((s, i) => {

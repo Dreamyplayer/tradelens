@@ -1,25 +1,27 @@
-import { makeKey } from "@/components/utils";
+import { makeKey } from '@/components/utils';
 
 /**
  * Typical intraday volume shape: spike at open, a midday lull,
  * and a second spike during the high-liquidity overlap window.
  */
+
+const bars = [
+  { t: '9:00', v: 70 },
+  { t: '9:30', v: 90 },
+  { t: '10:00', v: 55 },
+  { t: '10:30', v: 40 },
+  { t: '11:30', v: 25 },
+  { t: '12:30', v: 20 },
+  { t: '13:30', v: 22 },
+  { t: '14:30', v: 30 },
+  { t: '15:30', v: 50 },
+  { t: '19:00', v: 65 },
+  { t: '20:00', v: 95 },
+  { t: '21:30', v: 80 },
+  { t: '23:00', v: 35 },
+];
+
 export default function SessionVolumeDiagram() {
-  const bars = [
-    { t: '9:00', v: 70 },
-    { t: '9:30', v: 90 },
-    { t: '10:00', v: 55 },
-    { t: '10:30', v: 40 },
-    { t: '11:30', v: 25 },
-    { t: '12:30', v: 20 },
-    { t: '13:30', v: 22 },
-    { t: '14:30', v: 30 },
-    { t: '15:30', v: 50 },
-    { t: '19:00', v: 65 },
-    { t: '20:00', v: 95 },
-    { t: '21:30', v: 80 },
-    { t: '23:00', v: 35 },
-  ];
   const barWidth = 38;
   return (
     <svg viewBox='0 0 620 260' className='w-full h-auto rounded-lg bg-neutral-900 border border-neutral-800'>

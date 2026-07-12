@@ -4,14 +4,16 @@ import { makeKey } from '@/components/utils';
  * Shows why losses hurt asymmetrically: a 50% loss needs a 100% gain
  * to recover, not 50%.
  */
+
+const rows = [
+  { loss: 10, needed: 11 },
+  { loss: 20, needed: 25 },
+  { loss: 30, needed: 43 },
+  { loss: 50, needed: 100 },
+  { loss: 75, needed: 300 },
+];
+
 export default function DrawdownRecoveryDiagram() {
-  const rows = [
-    { loss: 10, needed: 11 },
-    { loss: 20, needed: 25 },
-    { loss: 30, needed: 43 },
-    { loss: 50, needed: 100 },
-    { loss: 75, needed: 300 },
-  ];
   return (
     <svg viewBox='0 0 620 260' className='w-full h-auto rounded-lg bg-neutral-900 border border-neutral-800'>
       <text x='20' y='26' fill='#a1a1aa' fontSize='13' fontFamily='monospace'>

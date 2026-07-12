@@ -62,7 +62,7 @@ export default function PreTradeChecklist() {
         <p className='text-sm text-neutral-400'>
           <span className='text-neutral-100 font-semibold'>{checkedCount}</span> / {total} checked
         </p>
-        <button onClick={reset} className='text-xs text-neutral-500 hover:text-neutral-300 transition-colors'>
+        <button type='button' onClick={reset} className='text-xs text-neutral-500 hover:text-neutral-300 transition-colors'>
           Reset
         </button>
       </div>
@@ -74,7 +74,7 @@ export default function PreTradeChecklist() {
             <ul className='space-y-2'>
               {group.items.map(item => (
                 <li key={makeKey(item)}>
-                  <button onClick={() => toggle(item)} className='w-full flex items-start gap-3 text-left group'>
+                  <button type='button' onClick={() => toggle(item)} className='w-full flex items-start gap-3 text-left group'>
                     <span
                       className={`mt-0.5 shrink-0 w-5 h-5 flex items-center justify-center text-sm transition-colors ${
                         checked[item] ? 'text-emerald-500' : 'text-neutral-500 group-hover:text-neutral-300'
