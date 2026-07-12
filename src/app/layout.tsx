@@ -15,8 +15,19 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://example.com'),
   title: 'TradeLens — Day Trading Strategy Guide',
   description: 'Visual deep-dives into price action, trend following, breakout trading, and smart money concepts.',
+  openGraph: {
+    title: 'TradeLens — Day Trading Strategy Guide',
+    description: 'Visual deep-dives into price action, trend following, breakout trading, and smart money concepts.',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'TradeLens — Day Trading Strategy Guide',
+    description: 'Visual deep-dives into price action, trend following, breakout trading, and smart money concepts.',
+  },
 };
 
 export default function RootLayout({

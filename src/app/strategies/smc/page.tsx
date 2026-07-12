@@ -6,6 +6,13 @@ import BOSCHoCHDiagram from '@/components/svg/BOSCHoCHDiagram';
 import FVGDiagram from '@/components/svg/FVGDiagram';
 import OrderBlockDiagram from '@/components/svg/OrderBlockDiagram';
 
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Smart Money Concepts — TradeLens',
+  description: 'BOS, CHoCH, Order Blocks, and Fair Value Gaps — reading structure shifts and institutional footprints.',
+};
+
 export default function SMCPage() {
   return (
     <StrategyLayout

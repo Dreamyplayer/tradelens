@@ -4,6 +4,13 @@ import Section from '@/components/strategies/Section';
 import StrategyLayout from '@/components/strategies/StrategyLayout';
 import TradeManagementDiagram from '@/components/svg/TradeManagementDiagram';
 
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Trade Management — TradeLens',
+  description: 'Breakeven, partial exits, and trailing stops — what to do while a trade is still open.',
+};
+
 export default function TradeManagementPage() {
   return (
     <StrategyLayout

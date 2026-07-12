@@ -4,6 +4,13 @@ import Section from '@/components/strategies/Section';
 import StrategyLayout from '@/components/strategies/StrategyLayout';
 import EmotionalCycleDiagram from '@/components/svg/EmotionalCycleDiagram';
 
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Trading Psychology & Discipline — TradeLens',
+  description: 'Why good setups still fail, and how to build a rules-based process that survives pressure.',
+};
+
 export default function PsychologyPage() {
   return (
     <StrategyLayout

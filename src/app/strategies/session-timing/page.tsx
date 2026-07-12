@@ -4,6 +4,13 @@ import Section from '@/components/strategies/Section';
 import StrategyLayout from '@/components/strategies/StrategyLayout';
 import SessionVolumeDiagram from '@/components/svg/SessionVolumeDiagram';
 
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Session Timing — TradeLens',
+  description: 'Why the same setup behaves differently by time of day, and which windows suit which strategy.',
+};
+
 export default function SessionTimingPage() {
   return (
     <StrategyLayout

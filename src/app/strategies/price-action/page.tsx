@@ -6,6 +6,14 @@ import CandlestickPatterns from '@/components/svg/CandlestickPatterns';
 import RoleReversalDiagram from '@/components/svg/RoleReversalDiagram';
 import SRZoneDiagram from '@/components/svg/SRZoneDiagram';
 
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Price Action + Support/Resistance — TradeLens',
+  description:
+    'How to trade zone reactions using pure chart structure and candlestick confirmation, with full visual breakdowns.',
+};
+
 export default function PriceActionPage() {
   return (
     <StrategyLayout

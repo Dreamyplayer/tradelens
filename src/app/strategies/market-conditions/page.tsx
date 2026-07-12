@@ -4,6 +4,13 @@ import Section from '@/components/strategies/Section';
 import StrategyLayout from '@/components/strategies/StrategyLayout';
 import MarketConditionsDiagram from '@/components/svg/MarketConditionsDiagram';
 
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Market Conditions — TradeLens',
+  description: 'Trending, ranging, or choppy — how to read conditions before picking a strategy.',
+};
+
 export default function MarketConditionsPage() {
   return (
     <StrategyLayout

@@ -5,6 +5,13 @@ import StrategyLayout from '@/components/strategies/StrategyLayout';
 import MAPullbackDiagram from '@/components/svg/MAPullbackDiagram';
 import TrendStructureDiagram from '@/components/svg/TrendStructureDiagram';
 
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Trend Following (MA/VWAP Pullback) — TradeLens',
+  description: 'Riding the dominant trend by entering on pullbacks toward a rising or falling average.',
+};
+
 export default function TrendFollowingPage() {
   return (
     <StrategyLayout

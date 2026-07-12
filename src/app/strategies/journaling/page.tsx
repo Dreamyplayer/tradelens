@@ -4,6 +4,13 @@ import Section from '@/components/strategies/Section';
 import StrategyLayout from '@/components/strategies/StrategyLayout';
 import EquityCurveDiagram from '@/components/svg/EquityCurveDiagram';
 
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Journaling & Backtesting — TradeLens',
+  description: 'How to actually prove a strategy has an edge instead of guessing from your last few trades.',
+};
+
 export default function JournalingPage() {
   return (
     <StrategyLayout

@@ -4,6 +4,13 @@ import Section from '@/components/strategies/Section';
 import StrategyLayout from '@/components/strategies/StrategyLayout';
 import MTFDiagram from '@/components/svg/MTFDiagram';
 
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Multi-Timeframe Analysis — TradeLens',
+  description: 'A top-down method for bias, structure, and entry timing across timeframes.',
+};
+
 export default function MultiTimeframePage() {
   return (
     <StrategyLayout

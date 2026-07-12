@@ -38,6 +38,13 @@ const faqs = [
   },
 ];
 
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'FAQ — TradeLens',
+  description: 'Quick answers to the most common questions about these strategies.',
+};
+
 export default function FAQPage() {
   return (
     <StrategyLayout

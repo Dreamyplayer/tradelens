@@ -5,6 +5,13 @@ import StrategyLayout from '@/components/strategies/StrategyLayout';
 import BreakoutDiagram from '@/components/svg/BreakoutDiagram';
 import FalseBreakoutDiagram from '@/components/svg/FalseBreakoutDiagram';
 
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Breakout Trading — TradeLens',
+  description: 'Catching momentum expansion as price escapes a tightening consolidation range.',
+};
+
 export default function BreakoutPage() {
   return (
     <StrategyLayout

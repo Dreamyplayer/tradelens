@@ -1,5 +1,12 @@
 import StrategyCard from '@/components/strategies/StrategyCard';
 
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Strategies — TradeLens',
+  description: 'Four core day trading strategies and seven foundations, each with full visual breakdowns.',
+};
+
 export default function StrategiesPage() {
   return (
     <main className='min-h-screen bg-neutral-950 text-neutral-100'>

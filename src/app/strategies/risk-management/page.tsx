@@ -5,6 +5,13 @@ import StrategyLayout from '@/components/strategies/StrategyLayout';
 import DrawdownRecoveryDiagram from '@/components/svg/DrawdownRecoveryDiagram';
 import PositionSizingDiagram from '@/components/svg/PositionSizingDiagram';
 
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Risk Management — TradeLens',
+  description: 'Position sizing, reward-to-risk ratios, and drawdown math — the layer underneath every strategy.',
+};
+
 export default function RiskManagementPage() {
   return (
     <StrategyLayout

@@ -2,6 +2,13 @@ import PreTradeChecklist from '@/components/strategies/PreTradeChecklist';
 import Section from '@/components/strategies/Section';
 import StrategyLayout from '@/components/strategies/StrategyLayout';
 
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Pre-Trade Checklist — TradeLens',
+  description: 'An interactive checklist to run through before every entry.',
+};
+
 export default function ChecklistPage() {
   return (
     <StrategyLayout

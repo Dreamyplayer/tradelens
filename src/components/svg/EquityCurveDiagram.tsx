@@ -24,8 +24,14 @@ export default function EquityCurveDiagram() {
       </text>
 
       <path d={pathD} fill='none' stroke='#10b981' strokeWidth='2.5' />
-      {points.map(p => (
-        <circle key={makeKey('point', p.cumulative + p.r)} cx={p.x} cy={p.y} r='3.5' fill={p.r > 0 ? '#10b981' : '#ef4444'} />
+      {points.map((p, i) => (
+        <circle
+          key={makeKey('point', p.cumulative + i)}
+          cx={p.x}
+          cy={p.y}
+          r='3.5'
+          fill={p.r > 0 ? '#10b981' : '#ef4444'}
+        />
       ))}
 
       <text x='560' y={points[points.length - 1].y - 12} fill='#10b981' fontSize='12' fontFamily='monospace'>

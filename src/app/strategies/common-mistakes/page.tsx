@@ -2,6 +2,13 @@ import InfoGrid from '@/components/strategies/InfoGrid';
 import Section from '@/components/strategies/Section';
 import StrategyLayout from '@/components/strategies/StrategyLayout';
 
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Common Mistakes — TradeLens',
+  description: 'Every recurring error across entries, risk, management, and discipline, collected in one place.',
+};
+
 export default function CommonMistakesPage() {
   return (
     <StrategyLayout

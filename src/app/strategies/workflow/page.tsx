@@ -3,6 +3,13 @@ import StrategyLayout from '@/components/strategies/StrategyLayout';
 import WorkflowDiagram from '@/components/svg/WorkflowDiagram';
 import Link from 'next/link';
 
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Complete Trading Workflow — TradeLens',
+  description: 'Every strategy and foundation on this site tied into one sequence, start to finish.',
+};
+
 export default function WorkflowPage() {
   return (
     <StrategyLayout
@@ -93,8 +100,8 @@ export default function WorkflowPage() {
 
       <Section label='ONGOING' title='What runs underneath every step'>
         <p>
-          Session timing, psychology, and discipline aren&apos;t a single step — they apply across the whole sequence, every
-          time.{' '}
+          Session timing, psychology, and discipline aren&apos;t a single step — they apply across the whole sequence,
+          every time.{' '}
           <Link href='/strategies/session-timing' className='text-emerald-500 hover:underline'>
             Session Timing
           </Link>{' '}

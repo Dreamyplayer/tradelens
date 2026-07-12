@@ -1,5 +1,13 @@
 import Link from 'next/link';
 
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'TradeLens — Day Trading Strategy Guide',
+  description:
+    'Visual deep-dives into price action, trend following, breakout trading, and smart money concepts — plus risk management, psychology, and workflow foundations.',
+};
+
 export default function Home() {
   return (
     <main className='min-h-[calc(100vh-56px)] bg-neutral-950 text-neutral-100 flex items-center'>
