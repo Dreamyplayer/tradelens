@@ -16,15 +16,12 @@ export default function OrderBlockDiagram() {
     { x: 380, o: 150, c: 70, h: 65, l: 155 }, // continues up
   ];
   return (
-    <svg
-      viewBox="0 0 460 280"
-      className="w-full h-auto rounded-lg bg-neutral-900 border border-neutral-800"
-    >
+    <svg viewBox='0 0 460 280' className='w-full h-auto rounded-lg bg-neutral-900 border border-neutral-800'>
       {/* Order block zone */}
-      <rect x="130" y="215" width="270" height="25" fill="#3b82f6" opacity="0.15" />
-      <line x1="130" y1="215" x2="400" y2="215" stroke="#3b82f6" strokeWidth="1" strokeDasharray="4 4" />
-      <line x1="130" y1="240" x2="400" y2="240" stroke="#3b82f6" strokeWidth="1" strokeDasharray="4 4" />
-      <text x="135" y="207" fill="#3b82f6" fontSize="11" fontFamily="monospace">
+      <rect x='130' y='215' width='270' height='25' fill='#3b82f6' opacity='0.15' />
+      <line x1='130' y1='215' x2='400' y2='215' stroke='#3b82f6' strokeWidth='1' strokeDasharray='4 4' />
+      <line x1='130' y1='240' x2='400' y2='240' stroke='#3b82f6' strokeWidth='1' strokeDasharray='4 4' />
+      <text x='135' y='207' fill='#3b82f6' fontSize='11' fontFamily='monospace'>
         BULLISH ORDER BLOCK
       </text>
 
@@ -34,23 +31,29 @@ export default function OrderBlockDiagram() {
         const bottom = Math.max(c.o, c.c);
         return (
           <g key={i}>
-            <line x1={c.x} y1={c.h} x2={c.x} y2={c.l} stroke="#71717a" strokeWidth="1.5" />
-            <rect x={c.x - 6} y={top} width="12" height={Math.max(bottom - top, 2)} fill={bullish ? "#10b981" : "#ef4444"} />
+            <line x1={c.x} y1={c.h} x2={c.x} y2={c.l} stroke='#71717a' strokeWidth='1.5' />
+            <rect
+              x={c.x - 6}
+              y={top}
+              width='12'
+              height={Math.max(bottom - top, 2)}
+              fill={bullish ? '#10b981' : '#ef4444'}
+            />
           </g>
         );
       })}
 
-      <text x="140" y="260" fill="#71717a" fontSize="10" fontFamily="monospace">
+      <text x='140' y='260' fill='#71717a' fontSize='10' fontFamily='monospace'>
         last down candle
       </text>
-      <text x="300" y="60" fill="#10b981" fontSize="11" fontFamily="monospace">
+      <text x='300' y='60' fill='#10b981' fontSize='11' fontFamily='monospace'>
         impulsive move
       </text>
-      <text x="300" y="120" fill="#3b82f6" fontSize="11" fontFamily="monospace">
+      <text x='300' y='120' fill='#3b82f6' fontSize='11' fontFamily='monospace'>
         price returns to
       </text>
-      <text x="300" y="134" fill="#3b82f6" fontSize="11" fontFamily="monospace">
-        "mitigate" the OB
+      <text x='300' y='134' fill='#3b82f6' fontSize='11' fontFamily='monospace'>
+        &quot;mitigate&quot; the OB
       </text>
     </svg>
   );

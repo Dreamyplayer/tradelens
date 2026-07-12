@@ -4,17 +4,16 @@
  */
 export default function FalseBreakoutDiagram() {
   return (
-    <svg
-      viewBox="0 0 700 260"
-      className="w-full h-auto rounded-lg bg-neutral-900 border border-neutral-800"
-    >
+    <svg viewBox='0 0 700 260' className='w-full h-auto rounded-lg bg-neutral-900 border border-neutral-800'>
       {/* False breakout */}
       <g>
-        <text x="150" y="26" fill="#ef4444" fontSize="13" fontFamily="monospace" textAnchor="middle">
+        <text x='150' y='26' fill='#ef4444' fontSize='13' fontFamily='monospace' textAnchor='middle'>
           FALSE BREAKOUT (trap)
         </text>
-        <line x1="40" y1="120" x2="280" y2="120" stroke="#f59e0b" strokeWidth="1" strokeDasharray="4 4" />
-        <text x="40" y="112" fill="#f59e0b" fontSize="10">range top</text>
+        <line x1='40' y1='120' x2='280' y2='120' stroke='#f59e0b' strokeWidth='1' strokeDasharray='4 4' />
+        <text x='40' y='112' fill='#f59e0b' fontSize='10'>
+          range top
+        </text>
 
         {[
           { x: 70, o: 150, c: 130, h: 125, l: 155 },
@@ -28,23 +27,31 @@ export default function FalseBreakoutDiagram() {
           const bottom = Math.max(c.o, c.c);
           return (
             <g key={i}>
-              <line x1={c.x} y1={c.h} x2={c.x} y2={c.l} stroke="#71717a" strokeWidth="1.5" />
-              <rect x={c.x - 6} y={top} width="12" height={Math.max(bottom - top, 2)} fill={bullish ? "#10b981" : "#ef4444"} />
+              <line x1={c.x} y1={c.h} x2={c.x} y2={c.l} stroke='#71717a' strokeWidth='1.5' />
+              <rect
+                x={c.x - 6}
+                y={top}
+                width='12'
+                height={Math.max(bottom - top, 2)}
+                fill={bullish ? '#10b981' : '#ef4444'}
+              />
             </g>
           );
         })}
-        <text x="150" y="230" fill="#71717a" fontSize="11" textAnchor="middle">
+        <text x='150' y='230' fill='#71717a' fontSize='11' textAnchor='middle'>
           wick exits, body closes back inside → trap
         </text>
       </g>
 
       {/* Confirmed breakout */}
-      <g transform="translate(370,0)">
-        <text x="150" y="26" fill="#10b981" fontSize="13" fontFamily="monospace" textAnchor="middle">
+      <g transform='translate(370,0)'>
+        <text x='150' y='26' fill='#10b981' fontSize='13' fontFamily='monospace' textAnchor='middle'>
           CONFIRMED BREAKOUT
         </text>
-        <line x1="40" y1="120" x2="280" y2="120" stroke="#f59e0b" strokeWidth="1" strokeDasharray="4 4" />
-        <text x="40" y="112" fill="#f59e0b" fontSize="10">range top</text>
+        <line x1='40' y1='120' x2='280' y2='120' stroke='#f59e0b' strokeWidth='1' strokeDasharray='4 4' />
+        <text x='40' y='112' fill='#f59e0b' fontSize='10'>
+          range top
+        </text>
 
         {[
           { x: 70, o: 150, c: 130, h: 125, l: 155 },
@@ -58,12 +65,18 @@ export default function FalseBreakoutDiagram() {
           const bottom = Math.max(c.o, c.c);
           return (
             <g key={i}>
-              <line x1={c.x} y1={c.h} x2={c.x} y2={c.l} stroke="#71717a" strokeWidth="1.5" />
-              <rect x={c.x - 6} y={top} width="12" height={Math.max(bottom - top, 2)} fill={bullish ? "#10b981" : "#ef4444"} />
+              <line x1={c.x} y1={c.h} x2={c.x} y2={c.l} stroke='#71717a' strokeWidth='1.5' />
+              <rect
+                x={c.x - 6}
+                y={top}
+                width='12'
+                height={Math.max(bottom - top, 2)}
+                fill={bullish ? '#10b981' : '#ef4444'}
+              />
             </g>
           );
         })}
-        <text x="150" y="230" fill="#71717a" fontSize="11" textAnchor="middle">
+        <text x='150' y='230' fill='#71717a' fontSize='11' textAnchor='middle'>
           body closes clearly outside → valid
         </text>
       </g>

@@ -18,15 +18,12 @@ export default function BreakoutDiagram() {
   ];
 
   return (
-    <svg
-      viewBox="0 0 620 320"
-      className="w-full h-auto rounded-lg bg-neutral-900 border border-neutral-800"
-    >
+    <svg viewBox='0 0 620 320' className='w-full h-auto rounded-lg bg-neutral-900 border border-neutral-800'>
       {/* Range box */}
-      <rect x="40" y="165" width="320" height="30" fill="#f59e0b" opacity="0.12" />
-      <line x1="40" y1="165" x2="360" y2="165" stroke="#f59e0b" strokeWidth="1" strokeDasharray="4 4" />
-      <line x1="40" y1="195" x2="360" y2="195" stroke="#f59e0b" strokeWidth="1" strokeDasharray="4 4" />
-      <text x="45" y="157" fill="#f59e0b" fontSize="12" fontFamily="monospace">
+      <rect x='40' y='165' width='320' height='30' fill='#f59e0b' opacity='0.12' />
+      <line x1='40' y1='165' x2='360' y2='165' stroke='#f59e0b' strokeWidth='1' strokeDasharray='4 4' />
+      <line x1='40' y1='195' x2='360' y2='195' stroke='#f59e0b' strokeWidth='1' strokeDasharray='4 4' />
+      <text x='45' y='157' fill='#f59e0b' fontSize='12' fontFamily='monospace'>
         CONSOLIDATION RANGE (compression)
       </text>
 
@@ -37,28 +34,28 @@ export default function BreakoutDiagram() {
         const bodyBottom = Math.max(c.o, c.c);
         return (
           <g key={i}>
-            <line x1={c.x} y1={c.h} x2={c.x} y2={c.l} stroke="#71717a" strokeWidth="1.5" />
+            <line x1={c.x} y1={c.h} x2={c.x} y2={c.l} stroke='#71717a' strokeWidth='1.5' />
             <rect
               x={c.x - 6}
               y={bodyTop}
-              width="12"
+              width='12'
               height={Math.max(bodyBottom - bodyTop, 2)}
-              fill={bullish ? "#10b981" : "#ef4444"}
+              fill={bullish ? '#10b981' : '#ef4444'}
             />
           </g>
         );
       })}
 
-      <text x="380" y="90" fill="#10b981" fontSize="12" fontFamily="monospace">
+      <text x='380' y='90' fill='#10b981' fontSize='12' fontFamily='monospace'>
         breakout
       </text>
-      <text x="440" y="150" fill="#3b82f6" fontSize="12" fontFamily="monospace">
+      <text x='440' y='150' fill='#3b82f6' fontSize='12' fontFamily='monospace'>
         retest
       </text>
 
       {/* Volume bars */}
-      <line x1="30" y1="240" x2="560" y2="240" stroke="#3f3f46" strokeWidth="1" />
-      <text x="30" y="255" fill="#71717a" fontSize="10" fontFamily="monospace">
+      <line x1='30' y1='240' x2='560' y2='240' stroke='#3f3f46' strokeWidth='1' />
+      <text x='30' y='255' fill='#71717a' fontSize='10' fontFamily='monospace'>
         volume
       </text>
       {candles.map((c, i) => (
@@ -66,9 +63,9 @@ export default function BreakoutDiagram() {
           key={i}
           x={c.x - 6}
           y={300 - c.v * 2}
-          width="12"
+          width='12'
           height={c.v * 2}
-          fill={c.v > 40 ? "#10b981" : "#52525b"}
+          fill={c.v > 40 ? '#10b981' : '#52525b'}
         />
       ))}
     </svg>

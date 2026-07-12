@@ -11,12 +11,9 @@ export default function DrawdownRecoveryDiagram() {
     { loss: 75, needed: 300 },
   ];
   return (
-    <svg
-      viewBox="0 0 620 260"
-      className="w-full h-auto rounded-lg bg-neutral-900 border border-neutral-800"
-    >
-      <text x="20" y="26" fill="#a1a1aa" fontSize="13" fontFamily="monospace">
-        LOSS %  →  GAIN % NEEDED TO RECOVER
+    <svg viewBox='0 0 620 260' className='w-full h-auto rounded-lg bg-neutral-900 border border-neutral-800'>
+      <text x='20' y='26' fill='#a1a1aa' fontSize='13' fontFamily='monospace'>
+        LOSS % → GAIN % NEEDED TO RECOVER
       </text>
       {rows.map((r, i) => {
         const y = 55 + i * 40;
@@ -24,12 +21,18 @@ export default function DrawdownRecoveryDiagram() {
         const neededWidth = Math.min(r.needed * 2.2, 460);
         return (
           <g key={i}>
-            <text x="20" y={y + 14} fill="#71717a" fontSize="12" fontFamily="monospace">
+            <text x='20' y={y + 14} fill='#71717a' fontSize='12' fontFamily='monospace'>
               -{r.loss}%
             </text>
-            <rect x="70" y={y} width={lossWidth} height="14" fill="#ef4444" opacity="0.6" />
-            <rect x="70" y={y + 16} width={neededWidth} height="14" fill="#10b981" opacity="0.6" />
-            <text x={80 + Math.max(lossWidth, neededWidth)} y={y + 14} fill="#e4e4e7" fontSize="12" fontFamily="monospace">
+            <rect x='70' y={y} width={lossWidth} height='14' fill='#ef4444' opacity='0.6' />
+            <rect x='70' y={y + 16} width={neededWidth} height='14' fill='#10b981' opacity='0.6' />
+            <text
+              x={80 + Math.max(lossWidth, neededWidth)}
+              y={y + 14}
+              fill='#e4e4e7'
+              fontSize='12'
+              fontFamily='monospace'
+            >
               needs +{r.needed}%
             </text>
           </g>

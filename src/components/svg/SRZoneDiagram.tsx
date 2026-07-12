@@ -4,23 +4,20 @@
  */
 export default function SRZoneDiagram() {
   return (
-    <svg
-      viewBox="0 0 700 340"
-      className="w-full h-auto rounded-lg bg-neutral-900 border border-neutral-800"
-    >
+    <svg viewBox='0 0 700 340' className='w-full h-auto rounded-lg bg-neutral-900 border border-neutral-800'>
       {/* Resistance zone */}
-      <rect x="40" y="60" width="620" height="30" fill="#ef4444" opacity="0.15" />
-      <line x1="40" y1="60" x2="660" y2="60" stroke="#ef4444" strokeWidth="1" strokeDasharray="4 4" />
-      <line x1="40" y1="90" x2="660" y2="90" stroke="#ef4444" strokeWidth="1" strokeDasharray="4 4" />
-      <text x="45" y="52" fill="#ef4444" fontSize="12" fontFamily="monospace">
+      <rect x='40' y='60' width='620' height='30' fill='#ef4444' opacity='0.15' />
+      <line x1='40' y1='60' x2='660' y2='60' stroke='#ef4444' strokeWidth='1' strokeDasharray='4 4' />
+      <line x1='40' y1='90' x2='660' y2='90' stroke='#ef4444' strokeWidth='1' strokeDasharray='4 4' />
+      <text x='45' y='52' fill='#ef4444' fontSize='12' fontFamily='monospace'>
         RESISTANCE ZONE
       </text>
 
       {/* Support zone */}
-      <rect x="40" y="250" width="620" height="30" fill="#10b981" opacity="0.15" />
-      <line x1="40" y1="250" x2="660" y2="250" stroke="#10b981" strokeWidth="1" strokeDasharray="4 4" />
-      <line x1="40" y1="280" x2="660" y2="280" stroke="#10b981" strokeWidth="1" strokeDasharray="4 4" />
-      <text x="45" y="296" fill="#10b981" fontSize="12" fontFamily="monospace">
+      <rect x='40' y='250' width='620' height='30' fill='#10b981' opacity='0.15' />
+      <line x1='40' y1='250' x2='660' y2='250' stroke='#10b981' strokeWidth='1' strokeDasharray='4 4' />
+      <line x1='40' y1='280' x2='660' y2='280' stroke='#10b981' strokeWidth='1' strokeDasharray='4 4' />
+      <text x='45' y='296' fill='#10b981' fontSize='12' fontFamily='monospace'>
         SUPPORT ZONE
       </text>
 
@@ -46,19 +43,19 @@ export default function SRZoneDiagram() {
         const bodyBottom = Math.max(c.o, c.c);
         return (
           <g key={i}>
-            <line x1={c.x} y1={c.h} x2={c.x} y2={c.l} stroke="#71717a" strokeWidth="1.5" />
+            <line x1={c.x} y1={c.h} x2={c.x} y2={c.l} stroke='#71717a' strokeWidth='1.5' />
             <rect
               x={c.x - 6}
               y={bodyTop}
-              width="12"
+              width='12'
               height={Math.max(bodyBottom - bodyTop, 2)}
-              fill={bullish ? "#10b981" : "#ef4444"}
+              fill={bullish ? '#10b981' : '#ef4444'}
             />
           </g>
         );
       })}
 
-      <text x="600" y="45" fill="#a1a1aa" fontSize="11" fontFamily="monospace" textAnchor="middle">
+      <text x='600' y='45' fill='#a1a1aa' fontSize='11' fontFamily='monospace' textAnchor='middle'>
         breakout →
       </text>
     </svg>
