@@ -3,6 +3,7 @@ import Section from "@/components/strategies/Section";
 import InfoGrid from "@/components/strategies/InfoGrid";
 import BreakoutDiagram from "@/components/svg/BreakoutDiagram";
 import FalseBreakoutDiagram from "@/components/svg/FalseBreakoutDiagram";
+import ExampleBox from "@/components/strategies/ExampleBox";
 
 export default function BreakoutPage() {
   return (
@@ -122,6 +123,17 @@ export default function BreakoutPage() {
                 "Higher chance of a false breakout with no real follow-through.",
             },
           ]}
+        />
+      </Section>
+
+      <Section label="EXAMPLE" title="Putting it together">
+        <ExampleBox
+          instrument="Bank Nifty Futures"
+          scenario="Price consolidates in a tightening 150-point range for two sessions, candles shrinking each hour. It finally closes 80 points above the range top with a clear volume spike."
+          entry="Either on the breakout candle's close, or wait for the retest of the old range top as new support."
+          stop="Just inside the old range, below the broken boundary."
+          target="Measured move — range height projected from the breakout point."
+          note="Retest entries give up some of the move but avoid most false-breakout traps — good default for beginners."
         />
       </Section>
     </StrategyLayout>

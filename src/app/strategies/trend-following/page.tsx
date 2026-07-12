@@ -3,6 +3,7 @@ import Section from "@/components/strategies/Section";
 import InfoGrid from "@/components/strategies/InfoGrid";
 import TrendStructureDiagram from "@/components/svg/TrendStructureDiagram";
 import MAPullbackDiagram from "@/components/svg/MAPullbackDiagram";
+import ExampleBox from "@/components/strategies/ExampleBox";
 
 export default function TrendFollowingPage() {
   return (
@@ -109,6 +110,17 @@ export default function TrendFollowingPage() {
                 "If a pullback breaks well past the prior higher-low (or lower-high), the trend may be reversing — don't force a continuation trade.",
             },
           ]}
+        />
+      </Section>
+
+      <Section label="EXAMPLE" title="Putting it together">
+        <ExampleBox
+          instrument="Nifty 50 Futures"
+          scenario="4H chart shows clear HH/HL structure above a rising 20 EMA. Price pulls back and taps the EMA, printing a bullish pin bar."
+          entry="Long on the close of the pin bar, just above its high."
+          stop="Below the pin bar's low / the last higher-low."
+          target="Previous swing high — trail further if structure keeps making new HHs."
+          note="If the pullback undercuts the prior higher-low by a wide margin, structure may be shifting — skip the trade instead of forcing it."
         />
       </Section>
     </StrategyLayout>

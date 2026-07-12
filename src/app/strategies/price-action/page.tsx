@@ -4,6 +4,7 @@ import InfoGrid from "@/components/strategies/InfoGrid";
 import SRZoneDiagram from "@/components/svg/SRZoneDiagram";
 import RoleReversalDiagram from "@/components/svg/RoleReversalDiagram";
 import CandlestickPatterns from "@/components/svg/CandlestickPatterns";
+import ExampleBox from "@/components/strategies/ExampleBox";
 
 export default function PriceActionPage() {
   return (
@@ -122,6 +123,17 @@ export default function PriceActionPage() {
                 "Using a zone that has only been touched once with no other confluence.",
             },
           ]}
+        />
+      </Section>
+
+      <Section label="EXAMPLE" title="Putting it together">
+        <ExampleBox
+          instrument="Crude Oil Mini Futures"
+          scenario="Price rallies into a resistance zone around 6,780–6,800 for the third time this week. On the third touch, a bearish engulfing candle closes back inside the zone."
+          entry="Short on the close of the engulfing candle, around 6,775."
+          stop="Above the zone's outer wick, around 6,815."
+          target="Prior support/swing low near 6,650 — roughly a 3:1 reward-to-risk."
+          note="The third touch matters — it's already a proven zone, and the engulfing candle is the confirmation, not the touch itself."
         />
       </Section>
     </StrategyLayout>
