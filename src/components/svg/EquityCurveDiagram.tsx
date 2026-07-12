@@ -1,3 +1,5 @@
+import { makeKey } from '@/components/utils';
+
 /**
  * A cumulative R-multiple equity curve built from a journaled series of
  * trades — the kind of chart backtesting/journaling is meant to produce.
@@ -22,8 +24,8 @@ export default function EquityCurveDiagram() {
       </text>
 
       <path d={pathD} fill='none' stroke='#10b981' strokeWidth='2.5' />
-      {points.map((p, i) => (
-        <circle key={i} cx={p.x} cy={p.y} r='3.5' fill={p.r > 0 ? '#10b981' : '#ef4444'} />
+      {points.map(p => (
+        <circle key={makeKey('point', p.cumulative + p.r)} cx={p.x} cy={p.y} r='3.5' fill={p.r > 0 ? '#10b981' : '#ef4444'} />
       ))}
 
       <text x='560' y={points[points.length - 1].y - 12} fill='#10b981' fontSize='12' fontFamily='monospace'>

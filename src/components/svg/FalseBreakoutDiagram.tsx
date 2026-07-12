@@ -1,3 +1,5 @@
+import { makeKey } from '@/components/utils';
+
 /**
  * Compares a false breakout (wick pokes out, closes back inside range)
  * against a confirmed breakout (candle closes clearly outside range).
@@ -21,12 +23,12 @@ export default function FalseBreakoutDiagram() {
           { x: 150, o: 145, c: 100, h: 80, l: 148 }, // wick pokes above, closes back inside
           { x: 190, o: 100, c: 160, h: 98, l: 165 }, // closes back below range
           { x: 230, o: 160, c: 190, h: 158, l: 195 },
-        ].map((c, i) => {
+        ].map(c => {
           const bullish = c.c < c.o;
           const top = Math.min(c.o, c.c);
           const bottom = Math.max(c.o, c.c);
           return (
-            <g key={i}>
+            <g key={makeKey('candle', c.c)}>
               <line x1={c.x} y1={c.h} x2={c.x} y2={c.l} stroke='#71717a' strokeWidth='1.5' />
               <rect
                 x={c.x - 6}
@@ -59,12 +61,12 @@ export default function FalseBreakoutDiagram() {
           { x: 150, o: 145, c: 90, h: 85, l: 148 }, // strong close well above range
           { x: 190, o: 90, c: 60, h: 55, l: 95 }, // continuation
           { x: 230, o: 60, c: 40, h: 35, l: 65 },
-        ].map((c, i) => {
+        ].map(c => {
           const bullish = c.c < c.o;
           const top = Math.min(c.o, c.c);
           const bottom = Math.max(c.o, c.c);
           return (
-            <g key={i}>
+            <g key={makeKey('candle', c.c)}>
               <line x1={c.x} y1={c.h} x2={c.x} y2={c.l} stroke='#71717a' strokeWidth='1.5' />
               <rect
                 x={c.x - 6}

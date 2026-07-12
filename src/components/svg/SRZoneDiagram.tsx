@@ -1,3 +1,5 @@
+import { makeKey } from '@/components/utils';
+
 /**
  * Shows price wicking into a resistance ZONE (not a single line) multiple
  * times, and a support ZONE below. Demonstrates "zone width" concept.
@@ -37,12 +39,12 @@ export default function SRZoneDiagram() {
         { x: 520, o: 255, c: 200, h: 253, l: 260 },
         { x: 560, o: 200, c: 140, h: 115, l: 205 }, // rejects resistance
         { x: 600, o: 140, c: 100, h: 60, l: 145 }, // breaks above (breakout)
-      ].map((c, i) => {
+      ].map(c => {
         const bullish = c.c < c.o; // lower y = higher price
         const bodyTop = Math.min(c.o, c.c);
         const bodyBottom = Math.max(c.o, c.c);
         return (
-          <g key={i}>
+          <g key={makeKey('candle', c.c)}>
             <line x1={c.x} y1={c.h} x2={c.x} y2={c.l} stroke='#71717a' strokeWidth='1.5' />
             <rect
               x={c.x - 6}

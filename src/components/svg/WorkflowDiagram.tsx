@@ -1,3 +1,5 @@
+import { makeKey } from '@/components/utils';
+
 /**
  * Capstone flowchart: the full decision path from reading conditions
  * through to journaling the result.
@@ -17,7 +19,7 @@ export default function WorkflowDiagram() {
       {steps.map((s, i) => {
         const y = 20 + i * 85;
         return (
-          <g key={i}>
+          <g key={makeKey(s.label)}>
             <rect x='30' y={y} width='340' height='60' rx='8' fill='#18181b' stroke='#3f3f46' strokeWidth='1' />
             <text x='50' y={y + 26} fill='#e4e4e7' fontSize='13' fontFamily='monospace'>
               {s.label}

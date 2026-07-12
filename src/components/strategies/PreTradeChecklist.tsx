@@ -1,5 +1,6 @@
 'use client';
 
+import { makeKey } from '@/components/utils';
 import { useState } from 'react';
 
 interface ChecklistGroup {
@@ -68,11 +69,11 @@ export default function PreTradeChecklist() {
 
       <div className='space-y-6'>
         {groups.map(group => (
-          <div key={group.title}>
+          <div key={makeKey(group.title)}>
             <p className='text-xs font-mono tracking-widest text-neutral-500 p-4'>{group.title.toUpperCase()}</p>
             <ul className='space-y-2'>
               {group.items.map(item => (
-                <li key={item}>
+                <li key={makeKey(item)}>
                   <button onClick={() => toggle(item)} className='w-full flex items-start gap-3 text-left group'>
                     <span
                       className={`mt-0.5 shrink-0 w-5 h-5 rounded flex items-center justify-center text-xs transition-colors ${

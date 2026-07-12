@@ -1,6 +1,7 @@
 import FAQItem from '@/components/strategies/FAQItem';
 import Section from '@/components/strategies/Section';
 import StrategyLayout from '@/components/strategies/StrategyLayout';
+import { makeKey } from '@/components/utils';
 
 const faqs = [
   {
@@ -47,7 +48,7 @@ export default function FAQPage() {
       <Section label='FAQ' title='Answers'>
         <div className='space-y-3'>
           {faqs.map(f => (
-            <FAQItem key={f.q} question={f.q} answer={f.a} />
+            <FAQItem key={makeKey(f.q)} question={f.q} answer={f.a} />
           ))}
         </div>
       </Section>

@@ -1,3 +1,5 @@
+import { makeKey } from '@/components/utils';
+
 /**
  * Market structure: Higher Highs / Higher Lows = uptrend.
  * Lower Highs / Lower Lows = downtrend.
@@ -23,8 +25,8 @@ export default function TrendStructureDiagram() {
           { x: 230, y: 140, label: 'HL' },
           { x: 280, y: 70, label: 'HH' },
           { x: 320, y: 100, label: 'HL' },
-        ].map((p, i) => (
-          <g key={i}>
+        ].map(p => (
+          <g key={makeKey(p.label + p.x + p.y)}>
             <circle cx={p.x} cy={p.y} r='4' fill='#10b981' />
             <text x={p.x} y={p.y - 10} fill='#a1a1aa' fontSize='10' textAnchor='middle'>
               {p.label}
@@ -51,8 +53,8 @@ export default function TrendStructureDiagram() {
           { x: 200, y: 110, label: 'LL' },
           { x: 240, y: 180, label: 'LH' },
           { x: 280, y: 150, label: 'LL' },
-        ].map((p, i) => (
-          <g key={i}>
+        ].map((p) => (
+          <g key={makeKey(p.label + p.x + p.y)}>
             <circle cx={p.x} cy={p.y} r='4' fill='#ef4444' />
             <text x={p.x} y={p.y - 10} fill='#a1a1aa' fontSize='10' textAnchor='middle'>
               {p.label}

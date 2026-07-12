@@ -1,3 +1,5 @@
+import { makeKey } from '@/components/utils';
+
 interface InfoItem {
   title: string;
   detail: string;
@@ -18,7 +20,7 @@ export default function InfoGrid({ items, tone = 'neutral' }: InfoGridProps) {
   return (
     <div className='grid sm:grid-cols-2 gap-3 my-4'>
       {items.map(item => (
-        <div key={item.title} className={`rounded-lg border p-4 ${toneStyles[tone]}`}>
+        <div key={makeKey(item.detail + item.title)} className={`rounded-lg border p-4 ${toneStyles[tone]}`}>
           <p className='text-sm font-semibold text-neutral-100'>{item.title}</p>
           <p className='text-sm text-neutral-400 mt-1'>{item.detail}</p>
         </div>

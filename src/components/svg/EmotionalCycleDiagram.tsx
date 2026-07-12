@@ -1,3 +1,5 @@
+import { makeKey } from '@/components/utils';
+
 /**
  * The classic "cycle of market emotions" mapped onto a price curve —
  * shows where impulsive decisions typically get made.
@@ -19,8 +21,8 @@ export default function EmotionalCycleDiagram() {
   return (
     <svg viewBox='0 0 620 280' className='w-full h-auto rounded-lg bg-neutral-900 border border-neutral-800'>
       <path d={pathD} fill='none' stroke='#e4e4e7' strokeWidth='2' />
-      {points.map((p, i) => (
-        <g key={i}>
+      {points.map(p => (
+        <g key={makeKey('point', p.label)}>
           <circle cx={p.x} cy={p.y} r={p.warn ? 6 : 4} fill={p.color} />
           <text
             x={p.x}

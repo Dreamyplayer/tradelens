@@ -1,3 +1,5 @@
+import { makeKey } from '@/components/utils';
+
 /**
  * A tightening consolidation range that breaks out with a volume spike.
  */
@@ -28,12 +30,12 @@ export default function BreakoutDiagram() {
       </text>
 
       {/* Candles */}
-      {candles.map((c, i) => {
+      {candles.map(c => {
         const bullish = c.c < c.o;
         const bodyTop = Math.min(c.o, c.c);
         const bodyBottom = Math.max(c.o, c.c);
         return (
-          <g key={i}>
+          <g key={makeKey('candle', c.c)}>
             <line x1={c.x} y1={c.h} x2={c.x} y2={c.l} stroke='#71717a' strokeWidth='1.5' />
             <rect
               x={c.x - 6}
@@ -58,9 +60,9 @@ export default function BreakoutDiagram() {
       <text x='15' y='255' fill='#71717a' fontSize='10' fontFamily='monospace'>
         volume
       </text>
-      {candles.map((c, i) => (
+      {candles.map(c => (
         <rect
-          key={i}
+          key={makeKey('volume', c.c)}
           x={c.x - 6}
           y={300 - c.v * 2}
           width='12'

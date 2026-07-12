@@ -1,3 +1,5 @@
+import { makeKey } from '@/components/utils';
+
 /**
  * Bullish Order Block: the last opposing (down) candle right before a
  * strong impulsive move up. Marked as a zone — price often returns to
@@ -30,7 +32,7 @@ export default function OrderBlockDiagram() {
         const top = Math.min(c.o, c.c);
         const bottom = Math.max(c.o, c.c);
         return (
-          <g key={i}>
+          <g key={makeKey('candle', i)}>
             <line x1={c.x} y1={c.h} x2={c.x} y2={c.l} stroke='#71717a' strokeWidth='1.5' />
             <rect
               x={c.x - 6}

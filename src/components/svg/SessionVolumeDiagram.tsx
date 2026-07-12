@@ -1,3 +1,5 @@
+import { makeKey } from "@/components/utils";
+
 /**
  * Typical intraday volume shape: spike at open, a midday lull,
  * and a second spike during the high-liquidity overlap window.
@@ -38,7 +40,7 @@ export default function SessionVolumeDiagram() {
         const height = b.v * 1.7;
         const isHigh = b.v >= 65;
         return (
-          <g key={i}>
+          <g key={makeKey(b.t)}>
             <rect x={x} y={220 - height} width={barWidth - 8} height={height} fill={isHigh ? '#10b981' : '#52525b'} />
             <text x={x + (barWidth - 8) / 2} y='235' fill='#71717a' fontSize='9' textAnchor='middle'>
               {b.t}

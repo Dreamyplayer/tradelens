@@ -1,3 +1,5 @@
+import { makeKey } from '@/components/utils';
+
 /**
  * Shows why losses hurt asymmetrically: a 50% loss needs a 100% gain
  * to recover, not 50%.
@@ -20,7 +22,7 @@ export default function DrawdownRecoveryDiagram() {
         const lossWidth = r.loss * 2.2;
         const neededWidth = Math.min(r.needed * 2.2, 460);
         return (
-          <g key={i}>
+          <g key={makeKey('row', r.loss)}>
             <text x='20' y={y + 14} fill='#71717a' fontSize='12' fontFamily='monospace'>
               -{r.loss}%
             </text>
