@@ -25,7 +25,7 @@ export default function OrderBlockDiagram() {
       <rect x='130' y='215' width='270' height='25' fill='#3b82f6' opacity='0.15' />
       <line x1='130' y1='215' x2='400' y2='215' stroke='#3b82f6' strokeWidth='1' strokeDasharray='4 4' />
       <line x1='130' y1='240' x2='400' y2='240' stroke='#3b82f6' strokeWidth='1' strokeDasharray='4 4' />
-      <text x='135' y='207' fill='#3b82f6' fontSize='11' fontFamily='monospace'>
+      <text x='205' y='230' fill='#3b82f6' fontSize='11' fontFamily='monospace'>
         BULLISH ORDER BLOCK
       </text>
 
@@ -50,13 +50,13 @@ export default function OrderBlockDiagram() {
       <text x='140' y='260' fill='#71717a' fontSize='10' fontFamily='monospace'>
         last down candle
       </text>
-      <text x='300' y='60' fill='#10b981' fontSize='11' fontFamily='monospace'>
+      <text x='300' y='50' fill='#10b981' fontSize='11' fontFamily='monospace'>
         impulsive move
       </text>
-      <text x='300' y='120' fill='#3b82f6' fontSize='11' fontFamily='monospace'>
+      <text x='350' y='180' fill='#3b82f6' fontSize='11' fontFamily='monospace'>
         price returns to
       </text>
-      <text x='300' y='134' fill='#3b82f6' fontSize='11' fontFamily='monospace'>
+      <text x='350' y='195' fill='#3b82f6' fontSize='11' fontFamily='monospace'>
         &quot;mitigate&quot; the OB
       </text>
     </svg>

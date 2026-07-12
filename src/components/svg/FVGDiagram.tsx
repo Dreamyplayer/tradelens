@@ -12,7 +12,7 @@ export default function FVGDiagram() {
       <text x='120' y='185' fill='#71717a' fontSize='10' textAnchor='middle'>
         candle 1
       </text>
-      <text x='120' y='112' fill='#a1a1aa' fontSize='9' textAnchor='middle'>
+      <text x='120' y='105' fill='#a1a1aa' fontSize='9' textAnchor='middle'>
         high
       </text>
 
@@ -37,10 +37,10 @@ export default function FVGDiagram() {
       <rect x='90' y='90' width='200' height='20' fill='#f59e0b' opacity='0.2' />
       <line x1='90' y1='90' x2='290' y2='90' stroke='#f59e0b' strokeWidth='1' strokeDasharray='4 4' />
       <line x1='90' y1='110' x2='290' y2='110' stroke='#f59e0b' strokeWidth='1' strokeDasharray='4 4' />
-      <text x='95' y='145' fill='#f59e0b' fontSize='11' fontFamily='monospace'>
+      <text x='90' y='80' fill='#f59e0b' fontSize='11' fontFamily='monospace'>
         FVG (imbalance)
       </text>
-      <text x='95' y='160' fill='#71717a' fontSize='10'>
+      <text x='95' y='200' fill='#71717a' fontSize='10'>
         untraded gap — no orders filled here
       </text>
 
@@ -52,10 +52,10 @@ export default function FVGDiagram() {
         strokeWidth='2'
         strokeDasharray='5 3'
       />
-      <text x='330' y='185' fill='#3b82f6' fontSize='10' fontFamily='monospace'>
+      <text x='280' y='165' fill='#3b82f6' fontSize='10' fontFamily='monospace'>
         price often
       </text>
-      <text x='330' y='198' fill='#3b82f6' fontSize='10' fontFamily='monospace'>
+      <text x='280' y='178' fill='#3b82f6' fontSize='10' fontFamily='monospace'>
         returns to fill
       </text>
     </svg>

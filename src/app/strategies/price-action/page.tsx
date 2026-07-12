@@ -61,6 +61,52 @@ export default function PriceActionPage() {
         />
       </Section>
 
+      <Section label='STRENGTH' title='Judging zone quality, not just presence'>
+        <p>
+          Not every zone deserves equal trust. Two zones can both show &quot;2 touches&quot; and still carry very
+          different odds — quality matters more than the raw touch count.
+        </p>
+        <InfoGrid
+          tone='good'
+          items={[
+            {
+              title: 'Touches spread across sessions',
+              detail:
+                "A level respected over several days shows sustained interest, not a single moment's coincidence.",
+            },
+            {
+              title: 'Sharp, decisive rejection wicks',
+              detail: 'Long, clean wicks at each touch show the zone is actively being defended by real orders.',
+            },
+            {
+              title: 'Zone has never been broken',
+              detail:
+                "A fresh, untested zone tends to hold better than one that's already failed once and had to be reclaimed.",
+            },
+          ]}
+        />
+        <InfoGrid
+          tone='bad'
+          items={[
+            {
+              title: 'Touches bunched in one session',
+              detail:
+                'Several reactions within an hour of each other are closer to one event than genuine repeated proof.',
+            },
+            {
+              title: 'Weak, shallow reactions',
+              detail:
+                'Small bodies with barely any wick suggest the zone is being tested half-heartedly, not defended.',
+            },
+            {
+              title: 'Zone already broken and reclaimed once',
+              detail:
+                'Once a level has failed, treat the next test with more caution — the orders that originally defended it may already be used up.',
+            },
+          ]}
+        />
+      </Section>
+
       <Section label='HOW' title='How to time the entry — confirmation patterns'>
         <p>
           Never buy or sell just because price touched a zone — that&apos;s guessing. Wait for a candle to actually

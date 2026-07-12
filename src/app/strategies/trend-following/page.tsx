@@ -5,6 +5,7 @@ import StrategyLayout from '@/components/strategies/StrategyLayout';
 import LiveExampleTrendFollowing from '@/components/svg/LiveExampleTrendFollowing';
 import MAPullbackDiagram from '@/components/svg/MAPullbackDiagram';
 import TrendStructureDiagram from '@/components/svg/TrendStructureDiagram';
+import Link from 'next/link';
 
 import type { Metadata } from 'next';
 
@@ -111,6 +112,40 @@ export default function TrendFollowingPage() {
             },
           ]}
         />
+      </Section>
+
+      <Section label='WATCH FOR' title='Signs a trend may be exhausting'>
+        <p>
+          Trend following works best on healthy trends — knowing when one is losing steam prevents entering a pullback
+          that&apos;s actually the start of a reversal.
+        </p>
+        <InfoGrid
+          tone='bad'
+          items={[
+            {
+              title: 'Pullbacks getting deeper each time',
+              detail:
+                "If each retracement digs further back than the last, the trend's momentum is fading even if structure hasn't technically broken yet.",
+            },
+            {
+              title: 'Equal highs instead of fresh highs',
+              detail:
+                'Price repeatedly failing to close above the last high (instead of making a new one) often means liquidity is being built up above for a sweep, not a genuine continuation.',
+            },
+            {
+              title: 'MA slope flattening',
+              detail:
+                "A moving average that's leveling off after being steeply angled is an early visual warning the trend is cooling before structure confirms it.",
+            },
+          ]}
+        />
+        <p className='text-sm text-neutral-500'>
+          A confirmed break of the last higher-low (or lower-high) is a <strong>CHoCH</strong> — covered in full on the{' '}
+          <Link href='/strategies/smc' className='text-emerald-500 hover:underline'>
+            Smart Money Concepts page
+          </Link>{' '}
+          — and is the more formal signal that a reversal, not just a pullback, may be underway.
+        </p>
       </Section>
 
       <Section label='EXAMPLE' title='Putting it together'>

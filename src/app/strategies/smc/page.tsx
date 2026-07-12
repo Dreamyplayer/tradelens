@@ -4,8 +4,10 @@ import Section from '@/components/strategies/Section';
 import StrategyLayout from '@/components/strategies/StrategyLayout';
 import BOSCHoCHDiagram from '@/components/svg/BOSCHoCHDiagram';
 import FVGDiagram from '@/components/svg/FVGDiagram';
+import LiquiditySweepDiagram from '@/components/svg/LiquiditySweepDiagram';
 import LiveExampleSMC from '@/components/svg/LiveExampleSMC';
 import OrderBlockDiagram from '@/components/svg/OrderBlockDiagram';
+import PremiumDiscountDiagram from '@/components/svg/PremiumDiscountDiagram';
 
 import type { Metadata } from 'next';
 
@@ -25,8 +27,8 @@ export default function SMCPage() {
         <p>
           SMC is price action with a specific lens: instead of just trading reactions at zones, you track{' '}
           <strong>where structure shifts happen</strong> and <strong>where large orders likely got placed</strong>{' '}
-          before a strong move. It&apos;s built on four core ideas — BOS, CHoCH, Order Blocks, and Fair Value Gaps —
-          used together, not in isolation.
+          before a strong move. It&apos;s built on six core ideas — BOS, CHoCH, Order Blocks, Fair Value Gaps, Liquidity
+          Sweeps, and Premium/Discount zones — used together, not in isolation.
         </p>
       </Section>
 
@@ -63,6 +65,32 @@ export default function SMCPage() {
         <FVGDiagram />
       </Section>
 
+      <Section label='WHERE' title='Where liquidity sits — sweeps and stop hunts'>
+        <p>
+          Obvious swing highs and lows (especially equal highs/lows) are where retail stop losses cluster. A{' '}
+          <strong>liquidity sweep</strong> is a deliberate wick beyond that level to trigger those stops before price
+          reverses — the move that looked like a breakdown was actually the trap.
+        </p>
+        <LiquiditySweepDiagram />
+        <p className='text-sm text-neutral-500'>
+          This is why a fresh CHoCH right after a sweep carries more weight than one without — the sweep explains where
+          the fuel for the reversal actually came from.
+        </p>
+      </Section>
+
+      <Section label='WHAT' title="Premium vs Discount — where in the range you're buying">
+        <p>
+          Split the current swing range at its midpoint (50% — the <strong>equilibrium</strong>). The upper half is{' '}
+          <strong>premium</strong> — a worse price to buy at. The lower half is <strong>discount</strong> — a better
+          price to buy at. The same logic flips for shorts.
+        </p>
+        <PremiumDiscountDiagram />
+        <p className='text-sm text-neutral-500'>
+          A bullish order block or FVG sitting inside the discount half of the range is a stronger long than the
+          identical setup sitting up in premium — same signal, better location.
+        </p>
+      </Section>
+
       <Section label='HOW' title='How to combine them into one trade'>
         <InfoGrid
           items={[
@@ -81,9 +109,14 @@ export default function SMCPage() {
                 'The impulsive move that caused the CHoCH usually leaves an order block and/or FVG right behind it.',
             },
             {
-              title: '4. Enter on the return to that zone',
+              title: '4. Check it sits in discount (or premium for shorts)',
               detail:
-                'Enter when price comes back to mitigate the order block or fill part of the FVG, with a tight stop beyond the zone.',
+                'A zone in the wrong half of the range is a weaker version of the same setup — location matters as much as the zone itself.',
+            },
+            {
+              title: '5. Enter on the return to that zone',
+              detail:
+                'Enter when price comes back to mitigate the order block or fill part of the FVG, with a tight stop beyond the zone — bonus confluence if a liquidity sweep just preceded it.',
             },
           ]}
         />

@@ -5,6 +5,7 @@ import StrategyLayout from '@/components/strategies/StrategyLayout';
 import BreakoutDiagram from '@/components/svg/BreakoutDiagram';
 import FalseBreakoutDiagram from '@/components/svg/FalseBreakoutDiagram';
 import LiveExampleBreakout from '@/components/svg/LiveExampleBreakout';
+import MeasuredMoveDiagram from '@/components/svg/MeasuredMoveDiagram';
 
 import type { Metadata } from 'next';
 
@@ -89,6 +90,19 @@ export default function BreakoutPage() {
             },
           ]}
         />
+      </Section>
+
+      <Section label='TARGET' title='Calculating the measured-move target'>
+        <p>
+          &quot;Measured move&quot; isn&apos;t a vague idea — it&apos;s a direct calculation. Take the height of the
+          range that just broke, and project that same distance from the breakout point.
+        </p>
+        <MeasuredMoveDiagram />
+        <p className='text-sm text-neutral-500'>
+          A tighter, taller compression before the break tends to produce a more reliable projection than a wide, loose
+          range — the measured move is a starting estimate, not a guarantee, and pairs well with the trailing approach
+          from the Trade Management page once price reaches it.
+        </p>
       </Section>
 
       <Section label='WHY' title='Why breakouts move fast'>

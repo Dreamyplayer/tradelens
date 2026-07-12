@@ -104,7 +104,7 @@ export default function LiveExamplePriceAction() {
         markerEnd='url(#arrow-pa)'
       />
       <g transform='rotate(-1 480 380)'>
-        <rect x='200' y='342' width='290' height='56' rx='6' fill='#18181b' stroke='#fbbf24' strokeWidth='1' />
+        <rect x='200' y='340' width='290' height='56' rx='6' fill='#18181b' stroke='#fbbf24' strokeWidth='1' />
         <text x='235' y='362' fill='#fbbf24' fontSize='12' fontFamily='monospace'>
           3rd touch + bearish engulfing
         </text>
