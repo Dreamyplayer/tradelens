@@ -55,7 +55,7 @@ export default function BreakoutDiagram() {
 
       {/* Volume bars */}
       <line x1='30' y1='240' x2='560' y2='240' stroke='#3f3f46' strokeWidth='1' />
-      <text x='30' y='255' fill='#71717a' fontSize='10' fontFamily='monospace'>
+      <text x='15' y='255' fill='#71717a' fontSize='10' fontFamily='monospace'>
         volume
       </text>
       {candles.map((c, i) => (
