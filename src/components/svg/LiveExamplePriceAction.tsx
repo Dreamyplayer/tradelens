@@ -25,11 +25,28 @@ const candles = [
 
 export default function LiveExamplePriceAction() {
   return (
-    <svg viewBox='0 0 760 480' className='w-full h-auto rounded-lg bg-neutral-900 border border-neutral-800'>
+    <svg viewBox='0 0 760 460' className='w-full h-auto rounded-lg bg-neutral-900 border border-neutral-800'>
+      <defs>
+        <marker id='arrow-pa' markerWidth='8' markerHeight='8' refX='6' refY='4' orient='auto'>
+          <path d='M0,0 L8,4 L0,8 Z' fill='#fbbf24' />
+        </marker>
+      </defs>
+
       {/* Resistance zone */}
       <rect x='30' y='120' width='600' height='26' fill='#ef4444' opacity='0.12' />
       <text x='35' y='112' fill='#ef4444' fontSize='11' fontFamily='monospace'>
         RESISTANCE ZONE 6,780–6,800
+      </text>
+
+      {/* Touch counters */}
+      <text x='110' y='96' fill='#a1a1aa' fontSize='11' fontFamily='monospace' textAnchor='middle'>
+        touch 1
+      </text>
+      <text x='250' y='96' fill='#a1a1aa' fontSize='11' fontFamily='monospace' textAnchor='middle'>
+        touch 2
+      </text>
+      <text x='390' y='96' fill='#fbbf24' fontSize='11' fontFamily='monospace' textAnchor='middle'>
+        touch 3
       </text>
 
       {/* SL line */}
@@ -68,8 +85,36 @@ export default function LiveExamplePriceAction() {
         );
       })}
 
-      <text x='425' y='460' fill='#a1a1aa' fontSize='10' fontFamily='monospace' textAnchor='middle'>
-        ↑ engulfing confirms
+      {/* Hand-drawn scribble circle around the engulfing (confirmation) candle */}
+      <g transform='rotate(-6 425 165)'>
+        <ellipse cx='425' cy='165' rx='24' ry='46' fill='none' stroke='#fbbf24' strokeWidth='2.5' opacity='0.9' />
+      </g>
+      <g transform='rotate(5 425 165)'>
+        <ellipse cx='427' cy='163' rx='27' ry='49' fill='none' stroke='#fbbf24' strokeWidth='2' opacity='0.55' />
+      </g>
+
+      {/* Callout arrow pointing from note up to the circled candle */}
+      <path
+        d='M 370 340 C 445 300, 440 250, 435 205'
+        fill='none'
+        stroke='#fbbf24'
+        strokeWidth='2'
+        strokeDasharray='1 5'
+        strokeLinecap='round'
+        markerEnd='url(#arrow-pa)'
+      />
+      <g transform='rotate(-1 480 380)'>
+        <rect x='200' y='342' width='290' height='56' rx='6' fill='#18181b' stroke='#fbbf24' strokeWidth='1' />
+        <text x='235' y='362' fill='#fbbf24' fontSize='12' fontFamily='monospace'>
+          3rd touch + bearish engulfing
+        </text>
+        <text x='235' y='381' fill='#fbbf24' fontSize='12' fontFamily='monospace'>
+          candle closes back inside zone
+        </text>
+      </g>
+
+      <text x='200' y='418' fill='#71717a' fontSize='11' fontFamily='monospace'>
+        → this close is the entry trigger, not the touch itself
       </text>
     </svg>
   );

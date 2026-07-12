@@ -1,7 +1,7 @@
 /**
- * Live visual example matching the Breakout worked example:
- * tightening range, breakout with volume, retest entry, SL inside the
- * old range, target from the measured-move projection.
+ * Live visual example matching the Breakout worked example, now with a
+ * hand-drawn-style callout explaining the confirmation: the wick retests
+ * the old range top and holds, before a bullish close confirms entry.
  */
 
 const candles = [
@@ -22,23 +22,29 @@ const candles = [
 
 export default function LiveExampleBreakout() {
   return (
-    <svg viewBox='0 0 720 320' className='w-full h-auto rounded-lg bg-neutral-900 border border-neutral-800'>
+    <svg viewBox='0 0 660 440' className='w-full h-auto rounded-lg bg-neutral-900 border border-neutral-800'>
+      <defs>
+        <marker id='arrow-bo' markerWidth='8' markerHeight='8' refX='6' refY='4' orient='auto'>
+          <path d='M0,0 L8,4 L0,8 Z' fill='#fbbf24' />
+        </marker>
+      </defs>
+
       {/* Old range zone */}
       <rect x='30' y='245' width='500' height='30' fill='#f59e0b' opacity='0.12' />
       <text x='35' y='238' fill='#f59e0b' fontSize='11' fontFamily='monospace'>
         CONSOLIDATION RANGE (old boundary)
       </text>
 
-      {/* SL line - inside old range */}
+      {/* SL line */}
       <line x1='30' y1='265' x2='600' y2='265' stroke='#ef4444' strokeWidth='1.4' strokeDasharray='5 4' />
       <text x='480' y='280' fill='#ef4444' fontSize='12' fontFamily='monospace'>
         SL — inside old range
       </text>
 
-      {/* Entry line - at retest */}
+      {/* Entry line */}
       <line x1='30' y1='250' x2='600' y2='250' stroke='#10b981' strokeWidth='1.4' strokeDasharray='5 4' />
       <text x='480' y='228' fill='#10b981' fontSize='12' fontFamily='monospace'>
-        Entry — retest of old range top
+        Entry — on retest hold
       </text>
 
       {/* Target line */}
@@ -65,9 +71,33 @@ export default function LiveExampleBreakout() {
         );
       })}
 
-      <text x='355' y='300' fill='#a1a1aa' fontSize='10' fontFamily='monospace' textAnchor='middle'>
-        ↑ wick retests, holds
-      </text>
+      {/* Hand-drawn scribble circle around the retest + confirmation candles */}
+      <g transform='rotate(-4 372 220)'>
+        <ellipse cx='372' cy='220' rx='42' ry='60' fill='none' stroke='#fbbf24' strokeWidth='2.5' opacity='0.9' />
+      </g>
+      <g transform='rotate(3 372 220)'>
+        <ellipse cx='374' cy='217' rx='45' ry='63' fill='none' stroke='#fbbf24' strokeWidth='2' opacity='0.5' />
+      </g>
+
+      {/* Callout arrow + note */}
+      <path
+        d='M 460 380 C 430 350, 400 300, 380 268'
+        fill='none'
+        stroke='#fbbf24'
+        strokeWidth='2'
+        strokeDasharray='1 5'
+        strokeLinecap='round'
+        markerEnd='url(#arrow-bo)'
+      />
+      <g transform='rotate(-1 300 400)'>
+        <rect x='290' y='360' width='300' height='56' rx='6' fill='#18181b' stroke='#fbbf24' strokeWidth='1' />
+        <text x='305' y='381' fill='#fbbf24' fontSize='12' fontFamily='monospace'>
+          Wick retests old range top, holds —
+        </text>
+        <text x='305' y='399' fill='#fbbf24' fontSize='12' fontFamily='monospace'>
+          next bullish close confirms entry
+        </text>
+      </g>
     </svg>
   );
 }
