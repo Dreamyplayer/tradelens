@@ -3,15 +3,15 @@ import StrategyCard from '@/components/strategies/StrategyCard';
 export default function StrategiesPage() {
   return (
     <main className='min-h-screen bg-neutral-950 text-neutral-100'>
-      <div className='max-w-3xl mx-auto px-6 py-20'>
+      <div className='max-w-6xl mx-auto px-6 py-20'>
         <p className='text-xs font-mono tracking-widest text-neutral-500'>DAY TRADING STRATEGIES</p>
         <h1 className='text-4xl font-bold mt-2 mb-4 text-neutral-50'>Core strategy deep-dives</h1>
-        <p className='text-neutral-400 mb-12'>
+        <p className='text-neutral-400 mb-12 max-w-2xl'>
           Four of the most widely used, market-agnostic approaches — with full visual breakdowns of how, when, why,
           where and which setups to look for.
         </p>
 
-        <div className='grid gap-4'>
+        <div className='grid sm:grid-cols-2 lg:grid-cols-3 gap-4'>
           <StrategyCard
             href='/strategies/price-action'
             index='STRATEGY 01'
@@ -42,8 +42,8 @@ export default function StrategiesPage() {
           />
         </div>
 
-        <p className='text-xs font-mono tracking-widest text-neutral-500 mt-14 p-4'>FOUNDATIONS</p>
-        <div className='grid gap-4'>
+        <p className='text-xs font-mono tracking-widest text-neutral-500 mt-16 p-4'>FOUNDATIONS</p>
+        <div className='grid sm:grid-cols-2 gap-4'>
           <StrategyCard
             href='/strategies/risk-management'
             index='FOUNDATION 01'
@@ -95,8 +95,8 @@ export default function StrategiesPage() {
           />
         </div>
 
-        <p className='text-xs font-mono tracking-widest text-neutral-500 mt-14 p-4'>GUIDES</p>
-        <div className='grid gap-4'>
+        <p className='text-xs font-mono tracking-widest text-neutral-500 mt-16 p-4'>GUIDES</p>
+        <div className='grid sm:grid-cols-2 gap-4'>
           <StrategyCard
             href='/strategies/workflow'
             index='GUIDE'
