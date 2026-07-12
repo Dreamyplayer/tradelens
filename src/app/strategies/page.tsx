@@ -42,7 +42,7 @@ export default function StrategiesPage() {
           />
         </div>
 
-        <p className='text-xs font-mono tracking-widest text-neutral-500 mt-14 mb-4'>FOUNDATIONS</p>
+        <p className='text-xs font-mono tracking-widest text-neutral-500 mt-14 p-4'>FOUNDATIONS</p>
         <div className='grid gap-4'>
           <StrategyCard
             href='/strategies/risk-management'
