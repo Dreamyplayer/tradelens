@@ -1,3 +1,4 @@
+import BackButton from '@/components/strategies/BackButton';
 import Link from 'next/link';
 import { ReactNode } from 'react';
 
@@ -21,6 +22,9 @@ export default function StrategyLayout({ eyebrow, title, subtitle, children }: S
         <p className='text-lg text-neutral-400 mb-12'>{subtitle}</p>
 
         <div className='space-y-14'>{children}</div>
+        <div className='mt-16 border-t border-neutral-800 pt-8'>
+          <BackButton />
+        </div>
       </div>
     </main>
   );

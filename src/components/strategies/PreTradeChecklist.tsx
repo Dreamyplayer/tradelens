@@ -76,10 +76,8 @@ export default function PreTradeChecklist() {
                 <li key={makeKey(item)}>
                   <button onClick={() => toggle(item)} className='w-full flex items-start gap-3 text-left group'>
                     <span
-                      className={`mt-0.5 shrink-0 w-5 h-5 rounded flex items-center justify-center text-xs transition-colors ${
-                        checked[item]
-                          ? 'text-white'
-                          : 'border-neutral-700 text-transparent group-hover:border-neutral-500'
+                      className={`mt-0.5 shrink-0 w-5 h-5 flex items-center justify-center text-sm transition-colors ${
+                        checked[item] ? 'text-emerald-500' : 'text-neutral-500 group-hover:text-neutral-300'
                       }`}
                     >
                       {checked[item] ? '✅' : '⭕'}
@@ -96,7 +94,7 @@ export default function PreTradeChecklist() {
       </div>
 
       {checkedCount === total && (
-        <p className='mt-6 text-sm text-emerald-500 font-medium p-4'>
+        <p className='mt-6 text-sm text-emerald-500 font-medium'>
           All conditions met — this is a rule-based entry.
         </p>
       )}

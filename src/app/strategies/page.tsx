@@ -49,7 +49,7 @@ export default function StrategiesPage() {
           />
         </div>
 
-        <p className='text-xs font-mono tracking-widest text-neutral-500 mt-16 p-4'>FOUNDATIONS</p>
+        <p className='text-xs font-mono tracking-widest text-neutral-500 mt-16 mb-4'>FOUNDATIONS</p>
         <div className='grid sm:grid-cols-2 gap-4'>
           <StrategyCard
             href='/strategies/risk-management'
@@ -102,7 +102,7 @@ export default function StrategiesPage() {
           />
         </div>
 
-        <p className='text-xs font-mono tracking-widest text-neutral-500 mt-16 p-4'>GUIDES</p>
+        <p className='text-xs font-mono tracking-widest text-neutral-500 mt-16 mb-4'>GUIDES</p>
         <div className='grid sm:grid-cols-2 gap-4'>
           <StrategyCard
             href='/strategies/workflow'
