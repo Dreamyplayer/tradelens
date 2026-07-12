@@ -3,6 +3,7 @@ import InfoGrid from '@/components/strategies/InfoGrid';
 import Section from '@/components/strategies/Section';
 import StrategyLayout from '@/components/strategies/StrategyLayout';
 import CandlestickPatterns from '@/components/svg/CandlestickPatterns';
+import LiveExamplePriceAction from '@/components/svg/LiveExamplePriceAction';
 import RoleReversalDiagram from '@/components/svg/RoleReversalDiagram';
 import SRZoneDiagram from '@/components/svg/SRZoneDiagram';
 
@@ -121,6 +122,7 @@ export default function PriceActionPage() {
       </Section>
 
       <Section label='EXAMPLE' title='Putting it together'>
+        <LiveExamplePriceAction />
         <ExampleBox
           instrument='Crude Oil Mini Futures'
           scenario='Price rallies into a resistance zone around 6,780–6,800 for the third time this week. On the third touch, a bearish engulfing candle closes back inside the zone.'

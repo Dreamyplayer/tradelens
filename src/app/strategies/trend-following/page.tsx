@@ -2,6 +2,7 @@ import ExampleBox from '@/components/strategies/ExampleBox';
 import InfoGrid from '@/components/strategies/InfoGrid';
 import Section from '@/components/strategies/Section';
 import StrategyLayout from '@/components/strategies/StrategyLayout';
+import LiveExampleTrendFollowing from '@/components/svg/LiveExampleTrendFollowing';
 import MAPullbackDiagram from '@/components/svg/MAPullbackDiagram';
 import TrendStructureDiagram from '@/components/svg/TrendStructureDiagram';
 
@@ -113,6 +114,7 @@ export default function TrendFollowingPage() {
       </Section>
 
       <Section label='EXAMPLE' title='Putting it together'>
+        <LiveExampleTrendFollowing />
         <ExampleBox
           instrument='Nifty 50 Futures'
           scenario='4H chart shows clear HH/HL structure above a rising 20 EMA. Price pulls back and taps the EMA, printing a bullish pin bar.'

@@ -4,6 +4,7 @@ import Section from '@/components/strategies/Section';
 import StrategyLayout from '@/components/strategies/StrategyLayout';
 import BOSCHoCHDiagram from '@/components/svg/BOSCHoCHDiagram';
 import FVGDiagram from '@/components/svg/FVGDiagram';
+import LiveExampleSMC from '@/components/svg/LiveExampleSMC';
 import OrderBlockDiagram from '@/components/svg/OrderBlockDiagram';
 
 import type { Metadata } from 'next';
@@ -117,6 +118,7 @@ export default function SMCPage() {
       </Section>
 
       <Section label='EXAMPLE' title='Putting it together'>
+        <LiveExampleSMC />
         <ExampleBox
           instrument='Crude Oil Mini Futures'
           scenario='15-min chart shows a CHoCH confirming a pullback is over within a larger uptrend. The impulsive move up that caused the CHoCH leaves a bullish order block and an FVG stacked in the same 6,420–6,440 area.'

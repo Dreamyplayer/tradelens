@@ -4,6 +4,7 @@ import Section from '@/components/strategies/Section';
 import StrategyLayout from '@/components/strategies/StrategyLayout';
 import BreakoutDiagram from '@/components/svg/BreakoutDiagram';
 import FalseBreakoutDiagram from '@/components/svg/FalseBreakoutDiagram';
+import LiveExampleBreakout from '@/components/svg/LiveExampleBreakout';
 
 import type { Metadata } from 'next';
 
@@ -125,6 +126,7 @@ export default function BreakoutPage() {
       </Section>
 
       <Section label='EXAMPLE' title='Putting it together'>
+        <LiveExampleBreakout />
         <ExampleBox
           instrument='Bank Nifty Futures'
           scenario='Price consolidates in a tightening 150-point range for two sessions, candles shrinking each hour. It finally closes 80 points above the range top with a clear volume spike.'
